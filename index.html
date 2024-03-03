@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="calc">
+          <div class="calc__inner">
+            <div class="output">
+              <p class="output__preresult"></p>
+              <p class="output__result"></p>
+            </div>
+            <div class="input">
+              <div class="decore-line"></div>
+              <div class="tools">
+                <div class="tools__left">
+                  <svg
+                    width="31"
+                    height="31"
+                    viewBox="0 0 31 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22.8333 15.3333H15.5833C15.4453 15.3333 15.3333 15.2214 15.3333 15.0833V9.5M28.6667 15.3333C28.6667 22.6971 22.6971 28.6667 15.3333 28.6667C7.96954 28.6667 2 22.6971 2 15.3333C2 7.96954 7.96954 2 15.3333 2C22.6971 2 28.6667 7.96954 28.6667 15.3333Z"
+                      stroke="#937CE6"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21.9702 2.02994L23.4702 2.02438L23.4647 0.535526L21.9758 0.529954L21.9702 2.02994ZM13.7325 8.17855C13.1481 8.76564 13.1502 9.71539 13.7373 10.2999C14.3244 10.8843 15.2741 10.8822 15.8586 10.2951L13.7325 8.17855ZM2.02981 21.9701L0.52982 21.9756L0.535342 23.4645L2.0242 23.47L2.02981 21.9701ZM10.2675 15.8215C10.8519 15.2344 10.8498 14.2846 10.2627 13.7001C9.67561 13.1157 8.72587 13.1178 8.1414 13.7049L10.2675 15.8215ZM13.963 3.49999L21.9646 3.52993L21.9758 0.529954L13.9742 0.50001L13.963 3.49999ZM20.4702 2.03551L20.5 10.0731L23.5 10.062L23.4702 2.02438L20.4702 2.03551ZM20.9072 0.971665L13.7325 8.17855L15.8586 10.2951L23.0332 3.08822L20.9072 0.971665ZM0.50001 13.938L0.52982 21.9756L3.5298 21.9645L3.49999 13.9269L0.50001 13.938ZM2.0242 23.47L10.0258 23.5L10.037 20.5L2.03542 20.4701L2.0242 23.47ZM3.09285 23.0283L10.2675 15.8215L8.1414 13.7049L0.966773 20.9118L3.09285 23.0283Z"
+                      fill="#937CE6"
+                    />
+                  </svg>
+                </div>
+                <div class="tools__right">
+                  <svg
+                    class="erase"
+                    width="40"
+                    height="28"
+                    viewBox="0 0 40 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M29.45 8.12222L17.575 19.8957M17.575 8.12222L29.45 19.8957M25.7555 26.4889H16.7298C14.4845 26.4889 13.3619 26.4889 12.3277 26.1604C11.8693 26.0148 11.4272 25.8223 11.0083 25.5861C10.0631 25.053 9.29816 24.2314 7.76817 22.588V22.588C4.63274 19.2203 3.06502 17.5365 2.68759 15.5528C2.5231 14.6883 2.5231 13.8006 2.68759 12.936C3.06502 10.9524 4.63274 9.26854 7.76817 5.90085V5.90085C9.29816 4.25754 10.0631 3.43588 11.0083 2.90283C11.4272 2.66658 11.8693 2.47413 12.3277 2.32853C13.3619 2 14.4845 2 16.7298 2H25.7556C30.6659 2 33.121 2 34.8854 3.17729C35.6525 3.68915 36.3108 4.34754 36.8227 5.11464C38 6.87896 38 9.33412 38 14.2444V14.2444C38 19.1548 38 21.6099 36.8227 23.3743C36.3108 24.1413 35.6525 24.7997 34.8854 25.3116C33.121 26.4889 30.6659 26.4889 25.7555 26.4889Z"
+                      stroke="#937CE6"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="button button__c button__grey" data-value="">
+                  <p class="button__text">C</p>
+                </div>
+                <div class="button button__brackets button__grey" data-value="">
+                  <p class="button__text">()</p>
+                </div>
+                <div class="button button__perсent button__grey" data-value="%">
+                  <p class="button__text">%</p>
+                </div>
+                <div class="button button__divide button__purp" data-value="/">
+                  <p class="button__text">/</p>
+                </div>
+                <div class="button button__7 button__black" data-value="7">
+                  <p class="button__text">7</p>
+                </div>
+                <div class="button button__8 button__black" data-value="8">
+                  <p class="button__text">8</p>
+                </div>
+                <div class="button button__9 button__black" data-value="9">
+                  <p class="button__text">9</p>
+                </div>
+                <div class="button button__multiply button__purp" data-value="*">
+                  <p class="button__text">x</p>
+                </div>
+                <div class="button button__4 button__black" data-value="4">
+                  <p class="button__text">4</p>
+                </div>
+                <div class="button button__5 button__black" data-value="5">
+                  <p class="button__text">5</p>
+                </div>
+                <div class="button button__6 button__black" data-value="6">
+                  <p class="button__text">6</p>
+                </div>
+                <div class="button button__minus button__purp" data-value="-">
+                  <p class="button__text">-</p>
+                </div>
+                <div class="button button__1 button__black" data-value="1">
+                  <p class="button__text">1</p>
+                </div>
+                <div class="button button__2 button__black" data-value="2">
+                  <p class="button__text">2</p>
+                </div>
+                <div class="button button__3 button__black" data-value="3">
+                  <p class="button__text">3</p>
+                </div>
+                <div class="button button__plus button__purp" data-value="+">
+                  <p class="button__text">+</p>
+                </div>
+                <div class="button button__plus-minus button__black" data-value="">
+                  <p class="button__text">+/-</p>
+                </div>
+                <div class="button button__0 button__black" data-value="0">
+                  <p class="button__text">0</p>
+                </div>
+                <div class="button button__dot button__black" data-value=".">
+                  <p class="button__text">.</p>
+                </div>
+                <div class="button button__equals button__gradient" data-value="=">
+                  <p class="button__text">=</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
