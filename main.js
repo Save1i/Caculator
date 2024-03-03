@@ -1,8 +1,8 @@
 const buttons = document.querySelectorAll(".button");
 const preoutput = document.querySelector(".output__preresult");
 const output = document.querySelector(".output__result");
-let num1 = "";
-let num2 = "";
+let num1 = [];
+let num2 = [];
 let operator = "";
 let result = 0;
 let secondNumEntered = false;
@@ -16,17 +16,18 @@ function firstNum() {
 
       if (!isNaN(parseInt(value))) {
         if (!operator) {
-          num1 += value;
+          num1.push(value);
           preoutput.textContent = num1;
         } else {
           if (!secondNumEntered) {
-            num2 = "";
+            num2 = [];
             secondNumEntered = true;
           }
           if (result !== 0) {
-            num1 = `${result}`;
+            num1 = [];
+            num1.push(`${result}`);
           }
-          num2 += value;
+          num2.push(value);
           secondNumEntered = false;
           preoutput.textContent = num2;
         }
