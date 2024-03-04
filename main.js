@@ -22,6 +22,7 @@ function firstNum() {
           if (!secondNumEntered) {
             num2 = [];
             secondNumEntered = true;
+            console.log(secondNumEntered);
           }
           if (result !== 0) {
             num1 = [];
@@ -35,10 +36,20 @@ function firstNum() {
         if (value === "=") {
           secondNumEntered = false;
           calculate();
-        } else {
+        } else if (value !== "." && value !== "(" && value !== ")") {
           secondNumEntered = false;
           operator = value;
           preoutput.textContent = `${value}`;
+        } else if (value === ".") {
+          if (secondNumEntered === false) {
+            num1.push(value);
+            preoutput.textContent = num1.join("");
+          } else {
+            num2.push(value);
+            preoutput.textContent = num2.join("");
+            secondNumEntered = true;
+            console.log(secondNumEntered + ".....");
+          }
         }
       }
     });
