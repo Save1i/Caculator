@@ -17,7 +17,7 @@ function firstNum() {
       if (!isNaN(parseInt(value))) {
         if (!operator) {
           num1.push(value);
-          preoutput.textContent = num1;
+          preoutput.textContent = num1.join("");
         } else {
           if (!secondNumEntered) {
             num2 = [];
@@ -28,13 +28,15 @@ function firstNum() {
             num1.push(`${result}`);
           }
           num2.push(value);
-          secondNumEntered = false;
-          preoutput.textContent = num2;
+
+          preoutput.textContent = num2.join("");
         }
       } else {
         if (value === "=") {
+          secondNumEntered = false;
           calculate();
         } else {
+          secondNumEntered = false;
           operator = value;
           preoutput.textContent = `${value}`;
         }
@@ -44,8 +46,8 @@ function firstNum() {
 }
 
 function calculate() {
-  const n1 = parseFloat(num1);
-  const n2 = parseFloat(num2);
+  const n1 = parseFloat(num1.join(""));
+  const n2 = parseFloat(num2.join(""));
 
   switch (operator) {
     case "+":
